@@ -12,4 +12,5 @@ jobs:
       with:
         fetch-depth: 1
     - name: Build tdlib for windows
-      run: /bin/bash windows.sh
+      shell: bash
+      run: bash windows.sh
