@@ -18,8 +18,9 @@ cd example/java
 rm -rf build
 mkdir build
 cd build
-cmake -A x64 -DCMAKE_INSTALL_PREFIX:PATH=../../../tdlib -DCMAKE_TOOLCHAIN_FILE:FILEPATH=../../../vcpkg/scripts/buildsystems/vcpkg.cmake -DTd_DIR:PATH=$(cd ../td/lib/cmake/Td && pwd) ..
+TD_DIR="$(cd ../../../td/build && pwd)"
+cmake -A x64 -DCMAKE_INSTALL_PREFIX:PATH=../../../tdlib -DCMAKE_TOOLCHAIN_FILE:FILEPATH=../../../vcpkg/scripts/buildsystems/vcpkg.cmake -DTd_DIR:PATH="$TD_DIR/td/lib/cmake/Td" ..
 cmake --build . --target install --config Release
 cd ../../..
 cd ..
-dir td/tdlib
+ls -la td/tdlib
